@@ -1,0 +1,61 @@
+.btn{
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* apply to all properties
+      transition have to be in the initial link state then apply to hover, active too 
+    */
+    transition: all .2s;
+    position: relative;
+    font-size: 16px;
+  }
+  &:hover {
+    transform: translateY(-3rem);
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  
+  /* related with initial btn:link state */
+  &:active {
+    transform: translateY(-1rem);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  
+  &--animated {
+    /* @keyframes duration | timing-function | delay  */
+    animation: moveInBottom .5s ease-out .75s;
+    /* アニメーション再生後は、最初の@keyframes（0%）のスタイルが適用されます。animation-delayプロパティを指定している場合、再生までの時間は最初の@keyframes（0%）のスタイルが適用される。 */
+    animation-fill-mode: backwards;
+  }
+}
