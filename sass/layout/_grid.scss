@@ -5,7 +5,7 @@
 .row {
   max-width: $grid-width;
   // css automarically calculate righ and left both same space and content to be a center
-  background-color: #eee;
+  // background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -15,7 +15,7 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered; 
+    // background-color: orangered; 
     float: left;
 
     &:not(:last-child) {
