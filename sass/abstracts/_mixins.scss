@@ -37,6 +37,7 @@ There aren’t any differences between em and rem with the exception of bugs fou
 @mixin respond($breakpoint) {
     // 600px => 600px / 16px = 37.5
   @if $breakpoint == phone {
+    // apply to only screen not for printout 
     @media only screen and (max-width: 37.5em) { @content }; 
   }
   // 900px
